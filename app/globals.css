@@ -1,26 +1,179 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+/* =========================================
+   HIPNOMENTE — Design Tokens (Tailwind v4)
+   ========================================= */
+@theme {
+  /* Colors — Navy / Steel-Blue palette */
+  --color-brand-950: #080e15;
+  --color-brand-900: #0c1520;
+  --color-brand-800: #111e2c;
+  --color-brand-700: #172838;
+  --color-brand-600: #1e3347;
+  --color-brand-500: #1a5272;
+  --color-brand-400: #2880a6;
+  --color-brand-300: #3da8c8;
+  --color-brand-200: #7ecde3;
+  --color-brand-100: #b6e4f0;
+  --color-brand-50:  #e4f6fb;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
+  --color-steel-deep:   #0f1e2e;
+  --color-steel-mid:    #1a5272;
+  --color-steel-light:  #2880a6;
+  --color-steel-glow:   #3da8c8;
+  --color-steel-soft:   #7ecde3;
+  --color-steel-pale:   #b6e4f0;
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+  --color-gold:    #f59e0b;
+  --color-gold-lt: #fcd34d;
+
+  --color-surface:     #0c1520;
+  --color-surface-alt: #111e2c;
+  --color-card:        #162538;
+  --color-card-hover:  #1d2f47;
+
+  --color-text-primary:   #eef3f7;
+  --color-text-secondary: #8ab4cc;
+  --color-text-muted:     #4a6878;
+
+  /* Typography */
+  --font-sans:    var(--font-inter);
+  --font-display: var(--font-playfair);
+
+  /* Border radius */
+  --radius-card: 1rem;
+  --radius-pill: 9999px;
+
+  /* Shadows — depth only, no color glow */
+  --shadow-glow:       0 8px 32px rgba(0, 0, 0, 0.5);
+  --shadow-glow-sm:    0 4px 16px rgba(0, 0, 0, 0.4);
+  --shadow-card:       0 4px 32px rgba(0, 0, 0, 0.5);
+
+  /* Animations */
+  --animate-fade-up: fade-up 0.5s ease both;
+
+  @keyframes fade-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  @keyframes shimmer {
+    0%   { background-position: -200% center; }
+    100% { background-position: 200% center; }
   }
 }
 
+/* =========================================
+   BASE STYLES
+   ========================================= */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-brand-950);
+  color: var(--color-text-primary);
+  font-family: var(--font-inter, system-ui, sans-serif);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow-x: hidden;
+}
+
+/* =========================================
+   UTILITY CLASSES
+   ========================================= */
+.gradient-brand {
+  background: linear-gradient(135deg, #1a5272 0%, #2880a6 50%, #3da8c8 100%);
+}
+
+.gradient-brand-text {
+  background: linear-gradient(135deg, #5ab8d4 0%, #7ecde3 50%, #9dd8ec 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-gold-text {
+  background: linear-gradient(135deg, #f59e0b 0%, #fcd34d 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.glow-border {
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+}
+
+.card-glass {
+  background: rgba(22, 37, 56, 0.65);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    #7ecde3 0%,
+    #9dd8ec 25%,
+    #5ab8d4 50%,
+    #9dd8ec 75%,
+    #7ecde3 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  animation: shimmer 3s linear infinite;
+}
+
+/* Section spacing */
+.section-padding {
+  padding-top: 5rem;
+  padding-bottom: 5rem;
+}
+
+@media (min-width: 768px) {
+  .section-padding {
+    padding-top: 7rem;
+    padding-bottom: 7rem;
+  }
+}
+
+[style*="--font-playfair"],
+h1, h2, h3 {
+  font-weight: 900;
+}
+
+/* =========================================
+   SKILL: prefers-reduced-motion (UX guideline — High severity)
+   ========================================= */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #080e15;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a5272;
+  border-radius: 3px;
+}
+
+::selection {
+  background: rgba(61, 168, 200, 0.35);
+  color: #eef3f7;
 }
