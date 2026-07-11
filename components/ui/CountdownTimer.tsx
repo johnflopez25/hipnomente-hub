@@ -9,11 +9,12 @@ interface TimeLeft {
   seconds: number;
 }
 
-const EVENT_DATE = new Date("2026-06-13T08:00:00-05:00");
+// Default date for the original Bogotá workshop
+const DEFAULT_DATE = new Date("2026-06-13T08:00:00-05:00");
 
-function getTimeLeft(): TimeLeft {
+function getTimeLeft(targetDate: Date): TimeLeft {
   const now = new Date();
-  const diff = EVENT_DATE.getTime() - now.getTime();
+  const diff = targetDate.getTime() - now.getTime();
 
   if (diff <= 0) {
     return { days: 0, hours: 0, minutes: 0, seconds: 0 };
@@ -47,7 +48,11 @@ function Unit({ value, label }: UnitProps) {
   );
 }
 
-export default function CountdownTimer() {
+interface CountdownTimerProps {
+  targetDate?: Date;
+}
+
+export default function CountdownTimer({ targetDate = DEFAULT_DATE }: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -58,14 +63,14 @@ export default function CountdownTimer() {
 
   useEffect(() => {
     setMounted(true);
-    setTimeLeft(getTimeLeft());
+    setTimeLeft(getTimeLeft(targetDate));
 
     const interval = setInterval(() => {
-      setTimeLeft(getTimeLeft());
+      setTimeLeft(getTimeLeft(targetDate));
     }, 1000);
 
     return () => clearInterval(interval);
-  }, []);
+  }, [targetDate]);
 
   if (!mounted) return null;
 
