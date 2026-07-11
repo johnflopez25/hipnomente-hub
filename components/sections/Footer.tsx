@@ -100,7 +100,7 @@ export default function Footer({
           >
             <div className="flex items-center mb-4">
               <img
-                src="/Logo.webp"
+                src="/logo.webp"
                 alt="Hipnomente Logo"
                 className="h-14 md:h-20 w-auto object-contain"
               />
