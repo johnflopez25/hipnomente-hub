@@ -5,7 +5,13 @@ import { motion, AnimatePresence } from "framer-motion";
 import { X } from "lucide-react";
 import { trackContact } from "@/lib/meta-pixel";
 
-export default function WhatsAppButton() {
+interface WhatsAppButtonProps {
+  message?: string;
+}
+
+export default function WhatsAppButton({
+  message = "¡Hola! Quiero inscribirme al Workshop de Hipnosis en Bogotá.",
+}: WhatsAppButtonProps) {
   const [showTooltip, setShowTooltip] = useState(false);
 
   useEffect(() => {
@@ -29,9 +35,7 @@ export default function WhatsAppButton() {
   };
 
   const whatsappNumber = "573108574778";
-  const whatsappMessage = encodeURIComponent(
-    "¡Hola! Quiero inscribirme al Workshop de Hipnosis en Bogotá."
-  );
+  const whatsappMessage = encodeURIComponent(message);
   const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${whatsappMessage}`;
 
   return (

@@ -50,7 +50,7 @@ export default function DesafioHipnotizarPage() {
           { href: "#faq", label: "FAQ" },
         ]}
       />
-      <WhatsAppButton />
+      <WhatsAppButton message="Hola, me gustaría recibir más información sobre el desafío de 7 días" />
     </main>
   );
 }
