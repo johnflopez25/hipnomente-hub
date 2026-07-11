@@ -5,6 +5,7 @@ import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import DesafioHero from "@/components/sections/desafio/DesafioHero";
 import DesafioPorQue from "@/components/sections/desafio/DesafioPorQue";
 import DesafioAprenderas from "@/components/sections/desafio/DesafioAprenderas";
+import DesafioRevolucion from "@/components/sections/desafio/DesafioRevolucion";
 import DesafioObstaculos from "@/components/sections/desafio/DesafioObstaculos";
 import DesafioTestimonios from "@/components/sections/desafio/DesafioTestimonios";
 import DesafioPricing from "@/components/sections/desafio/DesafioPricing";
@@ -29,13 +30,26 @@ export default function DesafioHipnotizarPage() {
       <DesafioHero />
       <DesafioPorQue />
       <DesafioAprenderas />
+      <DesafioRevolucion />
       <DesafioObstaculos />
       <DesafioTestimonios />
       <Instructor />
       <DesafioPricing />
       <DesafioFAQ />
       <DesafioFinalCTA />
-      <Footer />
+      <Footer
+        isOnline={true}
+        eventDateText="Del 27 de julio al 2 de agosto · 7:00 p.m."
+        eventLocationText="Transmisión en Vivo por Zoom"
+        waText="Hola, me gustaría recibir más información sobre el desafío de 7 días"
+        customNavLinks={[
+          { href: "#por-que", label: "¿Por qué?" },
+          { href: "#aprenderas", label: "Qué aprenderás" },
+          { href: "#testimonios", label: "Testimonios" },
+          { href: "#precios", label: "Precios" },
+          { href: "#faq", label: "FAQ" },
+        ]}
+      />
       <WhatsAppButton />
     </main>
   );

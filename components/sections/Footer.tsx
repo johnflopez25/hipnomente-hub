@@ -55,9 +55,33 @@ const socials = [
 
 interface FooterProps {
   simplified?: boolean;
+  isOnline?: boolean;
+  eventDateText?: string;
+  eventLocationText?: string;
+  hideEventBox?: boolean;
+  waText?: string;
+  customNavLinks?: { href: string; label: string }[];
 }
 
-export default function Footer({ simplified = false }: FooterProps) {
+const defaultNavLinks = [
+  { href: "#que-aprenderas", label: "Qué aprenderás" },
+  { href: "#para-quien", label: "¿Para quién?" },
+  { href: "#testimonios", label: "Testimonios" },
+  { href: "#detalles-evento", label: "El Evento" },
+  { href: "#faq", label: "FAQ" },
+];
+
+export default function Footer({
+  simplified = false,
+  isOnline = false,
+  eventDateText = "Sábado 13 de Junio · 8:00 a.m.",
+  eventLocationText = "Hotel B3 Virrey · Bogotá, Colombia",
+  hideEventBox = false,
+  waText = "quiero inscribirme al workshop en bogota",
+  customNavLinks,
+}: FooterProps) {
+  const activeNavLinks = customNavLinks || defaultNavLinks;
+
   return (
     <footer className="relative border-t border-white/8 overflow-hidden">
       <div
@@ -76,7 +100,7 @@ export default function Footer({ simplified = false }: FooterProps) {
           >
             <div className="flex items-center mb-4">
               <img
-                src="/logo.webp"
+                src="/Logo.webp"
                 alt="Hipnomente Logo"
                 className="h-14 md:h-20 w-auto object-contain"
               />
@@ -116,7 +140,7 @@ export default function Footer({ simplified = false }: FooterProps) {
                 Navegación
               </h3>
               <ul className="space-y-2">
-                {navLinks.map((link) => (
+                {activeNavLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
@@ -150,7 +174,7 @@ export default function Footer({ simplified = false }: FooterProps) {
                 info@hipnomente.com
               </a>
               <a
-                href="https://wa.me/573108574778?text=quiero%20inscribirme%20al%20workshop%20en%20bogota"
+                href={`https://wa.me/573108574778?text=${encodeURIComponent(waText)}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-2 text-slate-400/60 hover:text-sky-300 text-sm transition-colors duration-200 cursor-pointer"
@@ -160,15 +184,17 @@ export default function Footer({ simplified = false }: FooterProps) {
               </a>
             </div>
 
-            <div className="mt-6 card-glass glow-border rounded-xl p-4">
-              <p className="text-slate-300/80 text-xs leading-relaxed">
-                📍 <strong className="text-white">Evento presencial</strong>
-                <br />
-                Hotel B3 Virrey · Bogotá, Colombia
-                <br />
-                Sábado 13 de Junio · 8:00 a.m.
-              </p>
-            </div>
+            {!hideEventBox && (
+              <div className="mt-6 card-glass glow-border rounded-xl p-4">
+                <p className="text-slate-300/80 text-xs leading-relaxed">
+                  {isOnline ? "💻" : "📍"} <strong className="text-white">{isOnline ? "Evento online" : "Evento presencial"}</strong>
+                  <br />
+                  {eventLocationText}
+                  <br />
+                  {eventDateText}
+                </p>
+              </div>
+            )}
           </motion.div>
         </div>
 

@@ -785,7 +785,11 @@ export default function InsomniaPage() {
       </SectionWrapper>
 
       {/* 18. Footer Simplificada */}
-      <Footer simplified={true} />
+      <Footer 
+        simplified={true} 
+        hideEventBox={true} 
+        waText="Hola, me gustaría recibir más información sobre el programa de Hipnosis para Dormir Profundo"
+      />
 
     </main>
   );
