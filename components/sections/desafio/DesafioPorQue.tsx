@@ -8,11 +8,11 @@ export default function DesafioPorQue() {
   return (
     <SectionWrapper
       id="por-que"
-      className="relative px-4"
+      className="relative px-4 bg-[#0a0a14]"
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(79,40,180,0.08)_0%,transparent_60%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,rgba(91,63,224,0.09)_0%,transparent_60%)] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto">
@@ -28,11 +28,11 @@ export default function DesafioPorQue() {
           >
             <div className="relative max-w-[200px] sm:max-w-xs lg:max-w-sm mx-auto">
               {/* Glow behind image */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(79,40,180,0.25)_0%,transparent_70%)] blur-2xl scale-110" />
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(91,63,224,0.25)_0%,transparent_70%)] blur-2xl scale-110" />
               <img
                 src="/hipnosis-keyhole.webp"
                 alt="Hipnosis en acción — vista a través de un ojo de cerradura"
-                className="relative z-10 w-full h-auto drop-shadow-[0_0_40px_rgba(79,40,180,0.3)]"
+                className="relative z-10 w-full h-auto drop-shadow-[0_0_40px_rgba(91,63,224,0.3)]"
                 loading="lazy"
               />
             </div>
@@ -47,7 +47,7 @@ export default function DesafioPorQue() {
             className="flex flex-col gap-6"
           >
             <div>
-              <p className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-4">
+              <p className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-4">
                 Esto es para ti si estás listo
               </p>
               <h2
@@ -55,7 +55,7 @@ export default function DesafioPorQue() {
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 ¿Por qué{" "}
-                <span className="gradient-brand-text">HIPNOTIZAR</span>{" "}
+                <span className="gradient-trance-text">HIPNOTIZAR</span>{" "}
                 no es para curiosos?
               </h2>
             </div>

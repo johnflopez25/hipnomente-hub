@@ -104,6 +104,20 @@ body {
   background-clip: text;
 }
 
+/* "Trance" gradient — lifted from the Hipnomente logo's spiral (violet -> teal).
+   Scoped to the hipnotizar-en-7-dias landing only; the sitewide .gradient-brand-text
+   (steel-blue) is untouched so other pages are unaffected. */
+.gradient-trance-text {
+  background: linear-gradient(135deg, #5B3FE0 0%, #22C4B0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-trance {
+  background: linear-gradient(135deg, #5B3FE0 0%, #22C4B0 100%);
+}
+
 .glow-border {
   border: 1px solid rgba(255, 255, 255, 0.08);
   box-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);

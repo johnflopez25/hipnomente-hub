@@ -71,7 +71,7 @@ export default function Instructor() {
                 style={{ fontFamily: "var(--font-playfair)" }}
               >
                 Juan Roberto{" "}
-                <span className="gradient-brand-text">Rodriguez</span>
+                <span className="gradient-brand-text">Rodríguez</span>
               </h2>
               <p className="text-slate-400 text-lg font-medium tracking-wide mb-6">
                 Psicólogo - Hipnoterapeuta

@@ -8,7 +8,7 @@ export default function DesafioRevolucion() {
   return (
     <SectionWrapper
       id="revolucion"
-      className="relative px-4 py-16 md:py-24 bg-[radial-gradient(ellipse_at_center,rgba(80,30,100,0.12)_0%,transparent_70%)]"
+      className="relative px-4 py-16 md:py-24 bg-[#070a12] bg-[radial-gradient(ellipse_at_center,rgba(91,63,224,0.12)_0%,transparent_70%)]"
     >
       <div className="max-w-4xl mx-auto text-center relative z-10">
         
@@ -36,8 +36,8 @@ export default function DesafioRevolucion() {
           style={{ fontFamily: "var(--font-playfair)" }}
         >
           Se está produciendo una revolución entre los{" "}
-          <span className="gradient-brand-text">HIPNOTISTAS</span> e{" "}
-          <span className="gradient-brand-text">HIPNOTERAPEUTAS</span> que aplican
+          <span className="gradient-trance-text">HIPNOTISTAS</span> e{" "}
+          <span className="gradient-trance-text">HIPNOTERAPEUTAS</span> que aplican
           la hipnosis de forma correcta y están logrando resultados reales.
         </motion.h2>
 
@@ -50,10 +50,10 @@ export default function DesafioRevolucion() {
           className="card-glass glow-border max-w-2xl mx-auto p-6 md:p-8 rounded-2xl relative overflow-hidden"
         >
           {/* Inner ambient light */}
-          <div className="absolute -top-10 -right-10 w-32 h-32 bg-sky-500/10 blur-2xl rounded-full" />
-          
+          <div className="absolute -top-10 -right-10 w-32 h-32 bg-[#22C4B0]/10 blur-2xl rounded-full" />
+
           <p className="text-slate-300 text-base md:text-lg leading-relaxed font-medium">
-            <strong className="text-amber-400 font-extrabold">La hipnosis es un verdadero superpoder:</strong>{" "}
+            <strong className="gradient-trance-text font-extrabold">La hipnosis es un verdadero superpoder:</strong>{" "}
             El poder de ayudar a personas y pacientes a acceder a niveles profundos de su mente que no se alcanzan con otras técnicas.
           </p>
         </motion.div>

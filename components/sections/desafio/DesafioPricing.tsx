@@ -8,7 +8,7 @@ import { LINK_BASICO, LINK_VIP } from "./DesafioHero";
 
 const planBasico = {
   name: "En Vivo",
-  price: "$97",
+  price: "$29",
   currency: "USD",
   description: "Acceso completo a las 7 sesiones en vivo",
   includes: [
@@ -26,7 +26,7 @@ const planBasico = {
 
 const planVip = {
   name: "VIP con Grabación",
-  price: "$197",
+  price: "$59",
   currency: "USD",
   description: "Todo el desafío + grabaciones por 30 días",
   includes: [
@@ -64,7 +64,7 @@ function PlanCard({
         className={`h-1.5 w-full ${
           plan.highlight
             ? "bg-gradient-to-r from-amber-400 via-orange-500 to-amber-600"
-            : "bg-gradient-to-r from-sky-500 to-cyan-400"
+            : "gradient-trance"
         }`}
       />
 
@@ -88,7 +88,7 @@ function PlanCard({
         <div className="flex items-end gap-2 mb-2">
           <span
             className={`text-5xl font-extrabold tracking-tighter ${
-              plan.highlight ? "gradient-gold-text" : "gradient-brand-text"
+              plan.highlight ? "gradient-gold-text" : "gradient-trance-text"
             }`}
           >
             {plan.price}
@@ -107,7 +107,7 @@ function PlanCard({
             >
               <CheckCircle2
                 className={`w-5 h-5 shrink-0 mt-0.5 ${
-                  plan.highlight ? "text-amber-400" : "text-sky-400"
+                  plan.highlight ? "text-amber-400" : "text-[#22C4B0]"
                 }`}
               />
               {item}
@@ -116,7 +116,7 @@ function PlanCard({
         </ul>
 
         <Button
-          variant={plan.highlight ? "gold" : "outline"}
+          variant={plan.highlight ? "gold" : "trance"}
           size="lg"
           fullWidth
           href={plan.link}
@@ -139,7 +139,7 @@ export default function DesafioPricing() {
   return (
     <SectionWrapper
       id="precios"
-      className="relative px-4 bg-[radial-gradient(ellipse_at_center,rgba(14,78,110,0.10)_0%,transparent_70%)]"
+      className="relative px-4 bg-[#050308] bg-[radial-gradient(ellipse_at_center,rgba(245,158,11,0.06)_0%,transparent_70%)]"
     >
       <div className="max-w-5xl mx-auto">
         {/* Header */}
@@ -149,7 +149,7 @@ export default function DesafioPricing() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3"
+            className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Elige tu plan
           </motion.p>
@@ -162,7 +162,7 @@ export default function DesafioPricing() {
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             ¿Cuánto invierto para{" "}
-            <span className="gradient-brand-text">participar?</span>
+            <span className="gradient-trance-text">participar?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -189,7 +189,7 @@ export default function DesafioPricing() {
           viewport={{ once: true }}
           className="mt-12 card-glass glow-border rounded-2xl p-8 text-center max-w-3xl mx-auto"
         >
-          <p className="text-sky-400 font-bold text-sm uppercase tracking-widest mb-3">
+          <p className="text-[#8fe6da] font-bold text-sm uppercase tracking-widest mb-3">
             ¿Por qué es tan accesible?
           </p>
           <p className="text-slate-300/80 leading-relaxed text-sm md:text-base">

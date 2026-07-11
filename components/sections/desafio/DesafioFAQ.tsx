@@ -12,7 +12,7 @@ const faqs = [
   },
   {
     q: "¿Tendré acceso a la grabación?",
-    a: "Solo si eliges el plan VIP con Grabación ($197). Con ese plan tendrás acceso a todas las grabaciones durante 30 días después del evento. Con el plan En Vivo ($97) no hay acceso a grabaciones, por eso recomendamos participar en vivo para aprovechar al máximo la interacción.",
+    a: "Solo si eliges el plan VIP con Grabación ($59). Con ese plan tendrás acceso a todas las grabaciones durante 30 días después del evento. Con el plan En Vivo ($29) no hay acceso a grabaciones, por eso recomendamos participar en vivo para aprovechar al máximo la interacción.",
   },
   {
     q: "¿Necesito experiencia previa en hipnosis?",
@@ -65,7 +65,7 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
           transition={{ duration: 0.3 }}
           className="shrink-0"
         >
-          <ChevronDown className="w-5 h-5 text-sky-400" />
+          <ChevronDown className="w-5 h-5 text-[#22C4B0]" />
         </motion.div>
       </button>
 
@@ -90,10 +90,10 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
 
 export default function DesafioFAQ() {
   return (
-    <SectionWrapper id="faq" className="relative px-4">
+    <SectionWrapper id="faq" className="relative px-4 bg-[#050308]">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(14,78,110,0.08)_0%,transparent_60%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(34,196,176,0.07)_0%,transparent_60%)] pointer-events-none"
       />
 
       <div className="max-w-3xl mx-auto">
@@ -104,7 +104,7 @@ export default function DesafioFAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3"
+            className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Preguntas frecuentes
           </motion.p>

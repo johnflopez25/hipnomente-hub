@@ -19,10 +19,10 @@ export default function DesafioTestimonios() {
   const [activeImage, setActiveImage] = useState<string | null>(null);
 
   return (
-    <SectionWrapper id="testimonios" className="relative px-4">
+    <SectionWrapper id="testimonios" className="relative px-4 bg-[#060810]">
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(14,78,110,0.10)_0%,transparent_60%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,196,176,0.08)_0%,transparent_60%)] pointer-events-none"
       />
 
       <div className="max-w-6xl mx-auto">
@@ -33,7 +33,7 @@ export default function DesafioTestimonios() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3"
+            className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Testimonios
           </motion.p>
@@ -75,7 +75,7 @@ export default function DesafioTestimonios() {
               <div className="relative bg-slate-950 flex items-center justify-center overflow-hidden">
                 {/* Fallback placeholder */}
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-4 text-center text-slate-400 bg-slate-900/40">
-                  <MessageSquare className="w-8 h-8 text-sky-400 mb-2 opacity-60" />
+                  <MessageSquare className="w-8 h-8 text-[#22C4B0] mb-2 opacity-60" />
                   <p className="text-xs font-semibold text-slate-300">Reseña de Chat</p>
                 </div>
                 {/* Image */}
@@ -90,7 +90,7 @@ export default function DesafioTestimonios() {
                 />
                 {/* Zoom overlay */}
                 <div className="absolute inset-0 z-20 flex items-center justify-center bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-violet-600/80 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
+                  <div className="w-12 h-12 rounded-full bg-[#5B3FE0]/80 text-white flex items-center justify-center shadow-lg transform group-hover:scale-110 transition-all duration-300 backdrop-blur-sm">
                     <ZoomIn className="w-6 h-6" />
                   </div>
                 </div>

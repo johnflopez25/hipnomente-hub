@@ -36,7 +36,7 @@ export default function DesafioAprenderas() {
   return (
     <SectionWrapper
       id="aprenderas"
-      className="relative px-4 bg-[radial-gradient(ellipse_at_center,rgba(14,78,110,0.10)_0%,transparent_70%)]"
+      className="relative px-4 bg-[#08101a] bg-[radial-gradient(ellipse_at_center,rgba(91,63,224,0.10)_0%,transparent_70%)]"
     >
       <div className="max-w-6xl mx-auto">
         {/* Header */}
@@ -46,7 +46,7 @@ export default function DesafioAprenderas() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3"
+            className="text-violet-300 font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Lo que vas a lograr
           </motion.p>
@@ -59,7 +59,7 @@ export default function DesafioAprenderas() {
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             ¿Qué aprenderás en el{" "}
-            <span className="gradient-brand-text">Desafío?</span>
+            <span className="gradient-trance-text">Desafío?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -84,8 +84,8 @@ export default function DesafioAprenderas() {
               viewport={{ once: true }}
               className="card-glass glow-border rounded-2xl p-7 flex gap-5"
             >
-              <div className="shrink-0 w-12 h-12 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center">
-                <item.icon className="w-6 h-6 text-sky-400" />
+              <div className="shrink-0 w-12 h-12 rounded-xl bg-violet-500/10 border border-violet-500/20 flex items-center justify-center">
+                <item.icon className="w-6 h-6 text-violet-400" />
               </div>
               <div>
                 <h3 className="text-white font-bold text-base mb-2 leading-snug">

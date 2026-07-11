@@ -50,9 +50,13 @@ function Unit({ value, label }: UnitProps) {
 
 interface CountdownTimerProps {
   targetDate?: Date;
+  accentClassName?: string;
 }
 
-export default function CountdownTimer({ targetDate = DEFAULT_DATE }: CountdownTimerProps) {
+export default function CountdownTimer({
+  targetDate = DEFAULT_DATE,
+  accentClassName = "text-sky-400",
+}: CountdownTimerProps) {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({
     days: 0,
     hours: 0,
@@ -77,11 +81,11 @@ export default function CountdownTimer({ targetDate = DEFAULT_DATE }: CountdownT
   return (
     <div className="flex items-center gap-3 md:gap-4">
       <Unit value={timeLeft.days} label="Días" />
-      <span className="text-sky-400 text-2xl font-bold mb-5">:</span>
+      <span className={`${accentClassName} text-2xl font-bold mb-5`}>:</span>
       <Unit value={timeLeft.hours} label="Horas" />
-      <span className="text-sky-400 text-2xl font-bold mb-5">:</span>
+      <span className={`${accentClassName} text-2xl font-bold mb-5`}>:</span>
       <Unit value={timeLeft.minutes} label="Min" />
-      <span className="text-sky-400 text-2xl font-bold mb-5">:</span>
+      <span className={`${accentClassName} text-2xl font-bold mb-5`}>:</span>
       <Unit value={timeLeft.seconds} label="Seg" />
     </div>
   );

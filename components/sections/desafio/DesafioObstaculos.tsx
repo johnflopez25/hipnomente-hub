@@ -9,7 +9,7 @@ const obstacles = [
     icon: Clock,
     question: '"No tengo tiempo."',
     answer:
-      "Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación ($197), tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.",
+      "Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación ($59), tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.",
   },
   {
     icon: GraduationCap,
@@ -33,7 +33,7 @@ const obstacles = [
     icon: Stethoscope,
     question: '"Quiero aplicarlo terapéuticamente."',
     answer:
-      "Saldrás con el protocolo base y los límites éticos claros para usarlo en sesiones reales. Para casos clínicos complejos, recomendamos complementarlo con la Mentoría Hipnomente.",
+      "Saldrás con el protocolo base y los límites éticos claros para usarlo en sesiones reales. Para casos clínicos complejos existe un siguiente paso — la Mentoría Hipnomente — que te compartimos en detalle dentro del propio desafío.",
   },
 ];
 
@@ -41,11 +41,11 @@ export default function DesafioObstaculos() {
   return (
     <SectionWrapper
       id="obstaculos"
-      className="relative px-4"
+      className="relative px-4 bg-[#070a12]"
     >
       <div
         aria-hidden="true"
-        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(80,30,100,0.08)_0%,transparent_60%)] pointer-events-none"
+        className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(34,196,176,0.07)_0%,transparent_60%)] pointer-events-none"
       />
 
       <div className="max-w-4xl mx-auto">
@@ -56,7 +56,7 @@ export default function DesafioObstaculos() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             viewport={{ once: true }}
-            className="text-sky-400 font-semibold text-sm uppercase tracking-widest mb-3"
+            className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-3"
           >
             Respondemos tus dudas
           </motion.p>
@@ -69,7 +69,7 @@ export default function DesafioObstaculos() {
             style={{ fontFamily: "var(--font-playfair)" }}
           >
             ¿Qué te impide{" "}
-            <span className="gradient-brand-text">empezar?</span>
+            <span className="gradient-trance-text">empezar?</span>
           </motion.h2>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -94,8 +94,8 @@ export default function DesafioObstaculos() {
               viewport={{ once: true }}
               className="card-glass glow-border rounded-2xl p-6 flex gap-5 items-start"
             >
-              <div className="shrink-0 w-11 h-11 rounded-xl bg-sky-500/10 border border-sky-500/20 flex items-center justify-center mt-0.5">
-                <item.icon className="w-5 h-5 text-sky-400" />
+              <div className="shrink-0 w-11 h-11 rounded-xl bg-[#22C4B0]/10 border border-[#22C4B0]/20 flex items-center justify-center mt-0.5">
+                <item.icon className="w-5 h-5 text-[#22C4B0]" />
               </div>
               <div>
                 <p className="text-white font-bold text-base mb-2">

@@ -1,8 +1,9 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Calendar } from "lucide-react";
+import { ArrowRight, Calendar, CheckCircle2 } from "lucide-react";
 import CountdownTimer from "@/components/ui/CountdownTimer";
+import DepthRings from "./DepthRings";
 
 export const LINK_BASICO = "https://pay.hotmart.com/F106570275V";
 export const LINK_VIP = "https://pay.hotmart.com/O106570435F";
@@ -21,11 +22,16 @@ const benefits = [
 export default function DesafioHero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-12 pb-20">
-      {/* Background — amber glow at top, dark at bottom */}
+      {/* Background — violet glow at top, teal ember at bottom, matching the brand gradient */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d0818] via-[#0a0a14] to-[#080e15]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(79,40,180,0.45)_0%,transparent_65%)]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(14,78,110,0.12)_0%,transparent_70%)]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(91,63,224,0.4)_0%,transparent_65%)]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(34,196,176,0.12)_0%,transparent_70%)]" />
+        <DepthRings
+          size={760}
+          opacity={0.1}
+          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        />
       </div>
 
       {/* Content */}
@@ -52,7 +58,7 @@ export default function DesafioHero() {
         >
           {benefits.map((b) => (
             <span key={b} className="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
-              <span className="text-lg">✅</span>
+              <CheckCircle2 className="w-4 h-4 text-[#22C4B0] shrink-0" />
               {b}
             </span>
           ))}
@@ -65,7 +71,7 @@ export default function DesafioHero() {
           transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
           className="inline-flex items-center gap-3 bg-black/50 backdrop-blur-md border border-white/15 rounded-full px-5 py-3 mb-8"
         >
-          <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
+          <Calendar className="w-4 h-4 text-[#22C4B0] shrink-0" />
           <span className="text-white font-semibold text-xs md:text-sm uppercase tracking-wider">
             Del 27 de julio al 2 de agosto · 7 PM hora Colombia · Desafío online y en vivo
           </span>
@@ -95,10 +101,10 @@ export default function DesafioHero() {
           transition={{ duration: 0.5, delay: 0.5, ease: EASE }}
           className="flex flex-col items-center gap-3"
         >
-          <p className="text-xs uppercase tracking-widest text-amber-400/80 font-semibold">
+          <p className="text-xs uppercase tracking-widest text-[#8fe6da]/80 font-semibold">
             El desafío comienza en
           </p>
-          <CountdownTimer targetDate={DESAFIO_DATE} />
+          <CountdownTimer targetDate={DESAFIO_DATE} accentClassName="text-violet-300" />
         </motion.div>
       </div>
 

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import { trackInitiateCheckout } from "@/lib/meta-pixel";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-  variant?: "primary" | "secondary" | "outline" | "gold";
+  variant?: "primary" | "secondary" | "outline" | "gold" | "trance";
   size?: "sm" | "md" | "lg" | "xl";
   children: ReactNode;
   fullWidth?: boolean;
@@ -23,6 +23,8 @@ const variantStyles: Record<string, string> = {
     "bg-transparent border-2 border-sky-400/60 text-sky-300 hover:bg-sky-500/10 hover:scale-[1.02]",
   gold:
     "bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 font-bold shadow-lg shadow-amber-900/30 hover:brightness-105 hover:scale-[1.02]",
+  trance:
+    "bg-transparent border-2 border-[#22C4B0]/50 text-[#8fe6da] hover:bg-[#22C4B0]/10 hover:border-[#22C4B0]/80 hover:scale-[1.02]",
 };
 
 const sizeStyles: Record<string, string> = {
