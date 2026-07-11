@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { Brain, Zap, Shield, Target } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
-import { LINK_VIP } from "./DesafioHero";
 
 const learnings = [
   {
@@ -111,9 +110,9 @@ export default function DesafioAprenderas() {
           <Button
             variant="gold"
             size="lg"
-            href={LINK_VIP}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#precios"
+            target={undefined}
+            rel={undefined}
             className="font-bold uppercase tracking-wide"
           >
             Quiero participar en el desafío

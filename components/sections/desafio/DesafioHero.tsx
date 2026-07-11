@@ -1,8 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowRight, Monitor, Calendar, Clock } from "lucide-react";
-import Button from "@/components/ui/Button";
+import { ArrowRight, Calendar } from "lucide-react";
 import CountdownTimer from "@/components/ui/CountdownTimer";
 
 export const LINK_BASICO = "https://pay.hotmart.com/F106570275V";
@@ -13,110 +12,80 @@ const DESAFIO_DATE = new Date("2026-07-27T19:00:00-05:00");
 
 const EASE = [0.16, 1, 0.3, 1] as const;
 
+const benefits = [
+  "Protocolos seguros",
+  "Paso a paso desde cero",
+  "100% Online",
+];
+
 export default function DesafioHero() {
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-32 pb-20">
-      {/* Background */}
+    <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-12 pb-20">
+      {/* Background — amber glow at top, dark at bottom */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
-        <div className="absolute inset-0 bg-gradient-to-b from-[#080e15] via-[#080e15] to-[#080e15]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[1000px] h-[700px] bg-[radial-gradient(ellipse_at_top,rgba(14,78,110,0.22)_0%,transparent_65%)]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[400px] bg-[radial-gradient(ellipse_at_bottom,rgba(80,30,100,0.10)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-gradient-to-b from-[#0d0818] via-[#0a0a14] to-[#080e15]" />
+        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(79,40,180,0.45)_0%,transparent_65%)]" />
+        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(14,78,110,0.12)_0%,transparent_70%)]" />
       </div>
 
       {/* Content */}
       <div className="relative z-10 max-w-4xl w-full mx-auto text-center flex flex-col items-center">
-        {/* Badge */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1, ease: EASE }}
-          className="inline-flex items-center gap-2.5 bg-slate-950/50 backdrop-blur-md border border-white/10 rounded-full px-4 py-2 mb-8 text-xs font-bold tracking-wider text-slate-300"
-        >
-          <span className="flex h-2 w-2 relative">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-sky-400 opacity-75" />
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-sky-500" />
-          </span>
-          <span>100% ONLINE · ZOOM · 7 DÍAS</span>
-        </motion.div>
 
         {/* Main headline */}
         <motion.h1
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
-          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.15] tracking-tight mb-6"
+          transition={{ duration: 0.5, delay: 0.1, ease: EASE }}
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold leading-[1.2] tracking-tight mb-6 text-white"
           style={{ fontFamily: "var(--font-playfair)" }}
         >
-          <span className="text-white">Aprende a </span>
-          <span className="gradient-brand-text">Hipnotizar</span>
-          <span className="text-white"> en 7 Días</span>
+          Aprende a hipnotizar en 7 días{" "}
+          <span className="gradient-gold-text">(EN VIVO)</span>
         </motion.h1>
 
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
-          className="text-lg md:text-xl text-slate-300/80 max-w-3xl mx-auto mb-8 leading-relaxed"
-        >
-          Un entrenamiento intensivo diseñado para que aprendas a hipnotizar{" "}
-          <strong className="text-white">desde cero</strong>, mediante ejercicios
-          prácticos diarios. En solo 7 días desarrollarás las bases sólidas de la
-          hipnosis.
-        </motion.p>
-
-        {/* Event info pills */}
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
-          className="flex flex-wrap justify-center gap-3 mb-10"
-        >
-          {[
-            { icon: Calendar, text: "27 de Julio, 2026" },
-            { icon: Clock, text: "7:00 PM hora Colombia" },
-            { icon: Monitor, text: "Zoom — 100% Online" },
-          ].map(({ icon: Icon, text }) => (
-            <div
-              key={text}
-              className="flex items-center gap-2 card-glass glow-border rounded-full px-4 py-2 text-sm text-slate-300"
-            >
-              <Icon className="w-4 h-4 text-sky-400 shrink-0" />
-              <span>{text}</span>
-            </div>
-          ))}
-        </motion.div>
-
-        {/* CTA Buttons — two plans */}
+        {/* Benefits row */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.45, ease: EASE }}
-          className="flex flex-col sm:flex-row gap-4 w-full max-w-xl mx-auto mb-10"
+          transition={{ duration: 0.5, delay: 0.2, ease: EASE }}
+          className="flex flex-wrap justify-center gap-x-6 gap-y-2 mb-8"
         >
-          <Button
-            variant="gold"
-            size="lg"
-            fullWidth
-            href={LINK_VIP}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-bold tracking-wide uppercase"
+          {benefits.map((b) => (
+            <span key={b} className="flex items-center gap-2 text-white font-semibold text-sm md:text-base">
+              <span className="text-lg">✅</span>
+              {b}
+            </span>
+          ))}
+        </motion.div>
+
+        {/* Event info pill */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.3, ease: EASE }}
+          className="inline-flex items-center gap-3 bg-black/50 backdrop-blur-md border border-white/15 rounded-full px-5 py-3 mb-8"
+        >
+          <Calendar className="w-4 h-4 text-amber-400 shrink-0" />
+          <span className="text-white font-semibold text-xs md:text-sm uppercase tracking-wider">
+            Del 27 de julio al 2 de agosto · 7 PM hora Colombia · Desafío online y en vivo
+          </span>
+        </motion.div>
+
+        {/* CTA Button */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.5, delay: 0.4, ease: EASE }}
+          className="w-full max-w-sm mx-auto mb-12"
+        >
+          <motion.a
+            href="#precios"
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center justify-center gap-2 w-full rounded-full font-bold cursor-pointer transition-all duration-200 bg-gradient-to-r from-amber-500 to-yellow-400 text-gray-900 shadow-lg shadow-amber-900/40 hover:brightness-110 hover:scale-[1.02] px-8 py-4 text-lg uppercase tracking-wide"
           >
-            VIP con Grabación — $197
-            <ArrowRight className="w-5 h-5 ml-1" />
-          </Button>
-          <Button
-            variant="secondary"
-            size="lg"
-            fullWidth
-            href={LINK_BASICO}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="font-semibold"
-          >
-            Solo En Vivo — $97
-          </Button>
+            <ArrowRight className="w-5 h-5" />
+            Quiero hipnotizar en 7 días
+          </motion.a>
         </motion.div>
 
         {/* Countdown */}
@@ -126,7 +95,7 @@ export default function DesafioHero() {
           transition={{ duration: 0.5, delay: 0.5, ease: EASE }}
           className="flex flex-col items-center gap-3"
         >
-          <p className="text-xs uppercase tracking-widest text-sky-400 font-semibold">
+          <p className="text-xs uppercase tracking-widest text-amber-400/80 font-semibold">
             El desafío comienza en
           </p>
           <CountdownTimer targetDate={DESAFIO_DATE} />

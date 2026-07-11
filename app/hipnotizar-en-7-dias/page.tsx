@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Navbar from "@/components/sections/Navbar";
 import Instructor from "@/components/sections/Instructor";
 import Footer from "@/components/sections/Footer";
 import WhatsAppButton from "@/components/ui/WhatsAppButton";
 import DesafioHero from "@/components/sections/desafio/DesafioHero";
+import DesafioPorQue from "@/components/sections/desafio/DesafioPorQue";
 import DesafioAprenderas from "@/components/sections/desafio/DesafioAprenderas";
 import DesafioObstaculos from "@/components/sections/desafio/DesafioObstaculos";
+import DesafioTestimonios from "@/components/sections/desafio/DesafioTestimonios";
 import DesafioPricing from "@/components/sections/desafio/DesafioPricing";
 import DesafioFAQ from "@/components/sections/desafio/DesafioFAQ";
 import DesafioFinalCTA from "@/components/sections/desafio/DesafioFinalCTA";
@@ -25,10 +26,11 @@ export const metadata: Metadata = {
 export default function DesafioHipnotizarPage() {
   return (
     <main className="min-h-screen overflow-x-hidden">
-      <Navbar />
       <DesafioHero />
+      <DesafioPorQue />
       <DesafioAprenderas />
       <DesafioObstaculos />
+      <DesafioTestimonios />
       <Instructor />
       <DesafioPricing />
       <DesafioFAQ />

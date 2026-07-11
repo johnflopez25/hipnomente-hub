@@ -4,7 +4,6 @@ import { motion } from "framer-motion";
 import { ArrowRight, ShieldCheck } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
-import { LINK_BASICO, LINK_VIP } from "./DesafioHero";
 
 export default function DesafioFinalCTA() {
   return (
@@ -57,9 +56,7 @@ export default function DesafioFinalCTA() {
           <Button
             variant="gold"
             size="xl"
-            href={LINK_VIP}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#precios"
             className="font-bold uppercase tracking-wide"
           >
             VIP con Grabación — $197
@@ -68,9 +65,7 @@ export default function DesafioFinalCTA() {
           <Button
             variant="outline"
             size="xl"
-            href={LINK_BASICO}
-            target="_blank"
-            rel="noopener noreferrer"
+            href="#precios"
             className="font-semibold"
           >
             Solo En Vivo — $97
