@@ -5,48 +5,42 @@ import { CheckCircle2, Star } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
 import { LINK_BASICO, LINK_VIP } from "./DesafioHero";
+import { useMarket } from "./MarketContext";
 
-const planBasico = {
-  name: "En Vivo",
-  price: "$29",
-  currency: "USD",
-  description: "Acceso completo a las 7 sesiones en vivo",
-  includes: [
-    "7 sesiones en vivo por Zoom (60–75 min c/u)",
-    "Materiales y ejercicios de práctica diarios",
-    "Sesión de preguntas y respuestas cada día",
-    "Comunidad exclusiva por WhatsApp",
-    "Guiones de hipnosis paso a paso",
-    "Garantía de 7 días",
-  ],
-  cta: "Quiero el acceso en vivo",
-  link: LINK_BASICO,
-  highlight: false,
-};
+const INCLUDES_BASICO = [
+  "7 sesiones en vivo por Zoom (60–75 min c/u)",
+  "Materiales y ejercicios de práctica diarios",
+  "Sesión de preguntas y respuestas cada día",
+  "Comunidad exclusiva por WhatsApp",
+  "Guiones de hipnosis paso a paso",
+  "Garantía de 7 días",
+];
 
-const planVip = {
-  name: "VIP con Grabación",
-  price: "$59",
-  currency: "USD",
-  description: "Todo el desafío + grabaciones por 30 días",
-  includes: [
-    "Todo lo del plan En Vivo",
-    "Grabación de las 7 sesiones completas",
-    "Acceso a las grabaciones por 30 días",
-    "Acceso prioritario para hacer preguntas en vivo",
-    "Material extra de repaso",
-    "Garantía de 7 días",
-  ],
-  cta: "Quiero el plan VIP",
-  link: LINK_VIP,
-  highlight: true,
-};
+const INCLUDES_VIP = [
+  "Todo lo del plan En Vivo",
+  "Grabación de las 7 sesiones completas",
+  "Acceso a las grabaciones por 30 días",
+  "Acceso prioritario para hacer preguntas en vivo",
+  "Material extra de repaso",
+  "Garantía de 7 días",
+];
+
+interface Plan {
+  name: string;
+  price: string;
+  currency: string;
+  description: string;
+  includes: string[];
+  cta: string;
+  link: string;
+  highlight: boolean;
+}
 
 function PlanCard({
   plan,
   delay,
 }: {
-  plan: typeof planBasico;
+  plan: Plan;
   delay: number;
 }) {
   return (
@@ -136,6 +130,30 @@ function PlanCard({
 }
 
 export default function DesafioPricing() {
+  const market = useMarket();
+
+  const planBasico = {
+    name: "En Vivo",
+    price: market.priceBasico,
+    currency: market.currency,
+    description: "Acceso completo a las 7 sesiones en vivo",
+    includes: INCLUDES_BASICO,
+    cta: "Quiero el acceso en vivo",
+    link: LINK_BASICO,
+    highlight: false,
+  };
+
+  const planVip = {
+    name: "VIP con Grabación",
+    price: market.priceVip,
+    currency: market.currency,
+    description: "Todo el desafío + grabaciones por 30 días",
+    includes: INCLUDES_VIP,
+    cta: "Quiero el plan VIP",
+    link: LINK_VIP,
+    highlight: true,
+  };
+
   return (
     <SectionWrapper
       id="precios"

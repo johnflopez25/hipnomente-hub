@@ -3,14 +3,9 @@
 import { motion } from "framer-motion";
 import { Clock, GraduationCap, HelpCircle, Wifi, Stethoscope } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import { useMarket } from "./MarketContext";
 
-const obstacles = [
-  {
-    icon: Clock,
-    question: '"No tengo tiempo."',
-    answer:
-      "Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación ($59), tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.",
-  },
+const staticObstacles = [
   {
     icon: GraduationCap,
     question: '"Soy principiante total."',
@@ -38,6 +33,17 @@ const obstacles = [
 ];
 
 export default function DesafioObstaculos() {
+  const market = useMarket();
+
+  const obstacles = [
+    {
+      icon: Clock,
+      question: '"No tengo tiempo."',
+      answer: `Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación (${market.priceVip} ${market.currency}), tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.`,
+    },
+    ...staticObstacles,
+  ];
+
   return (
     <SectionWrapper
       id="obstaculos"

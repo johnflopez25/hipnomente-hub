@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import DesafioLanding from "@/components/sections/desafio/DesafioLanding";
 
+// Paid-traffic variant for Meta Ads campaigns targeting México — same page as
+// /hipnotizar-en-7-dias, only the displayed price/currency changes (see markets.ts).
+// noindex: this is an ad-landing duplicate, not meant to compete in organic search.
 export const metadata: Metadata = {
   title: "Desafío: Aprende a Hipnotizar en 7 Días | Hipnomente",
   description:
@@ -11,8 +14,9 @@ export const metadata: Metadata = {
       "7 días de práctica guiada para aprender a hipnotizar desde cero. Online, en vivo, 27 de julio de 2026.",
     type: "website",
   },
+  robots: { index: false, follow: false },
 };
 
-export default function DesafioHipnotizarPage() {
-  return <DesafioLanding market="general" />;
+export default function DesafioHipnotizarMXPage() {
+  return <DesafioLanding market="mx" />;
 }

@@ -5,8 +5,11 @@ import { ArrowRight, ShieldCheck } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
 import Button from "@/components/ui/Button";
 import DepthRings from "./DepthRings";
+import { useMarket } from "./MarketContext";
 
 export default function DesafioFinalCTA() {
+  const market = useMarket();
+
   return (
     <SectionWrapper
       id="inscribete"
@@ -66,7 +69,7 @@ export default function DesafioFinalCTA() {
             href="#precios"
             className="font-bold uppercase tracking-wide"
           >
-            VIP con Grabación — $59
+            VIP con Grabación — {market.priceVip} {market.currency}
             <ArrowRight className="w-5 h-5 ml-2" />
           </Button>
           <Button
@@ -75,7 +78,7 @@ export default function DesafioFinalCTA() {
             href="#precios"
             className="font-semibold"
           >
-            En Vivo — $29
+            En Vivo — {market.priceBasico} {market.currency}
           </Button>
         </motion.div>
 

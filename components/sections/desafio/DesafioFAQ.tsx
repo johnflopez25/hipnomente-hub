@@ -4,15 +4,12 @@ import { motion, AnimatePresence } from "framer-motion";
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
+import { useMarket } from "./MarketContext";
 
-const faqs = [
+const staticFaqs = [
   {
     q: "¿El desafío será en vivo?",
     a: "Sí. El Desafío Aprende a Hipnotizar en 7 Días es completamente en vivo a través de Zoom, desde el 27 de julio hasta el 2 de agosto de 2026. Las sesiones son todos los días a las 7:00 PM (hora de Colombia).",
-  },
-  {
-    q: "¿Tendré acceso a la grabación?",
-    a: "Solo si eliges el plan VIP con Grabación ($59). Con ese plan tendrás acceso a todas las grabaciones durante 30 días después del evento. Con el plan En Vivo ($29) no hay acceso a grabaciones, por eso recomendamos participar en vivo para aprovechar al máximo la interacción.",
   },
   {
     q: "¿Necesito experiencia previa en hipnosis?",
@@ -89,6 +86,17 @@ function FAQItem({ q, a, index }: { q: string; a: string; index: number }) {
 }
 
 export default function DesafioFAQ() {
+  const market = useMarket();
+
+  const faqs = [
+    staticFaqs[0],
+    {
+      q: "¿Tendré acceso a la grabación?",
+      a: `Solo si eliges el plan VIP con Grabación (${market.priceVip} ${market.currency}). Con ese plan tendrás acceso a todas las grabaciones durante 30 días después del evento. Con el plan En Vivo (${market.priceBasico} ${market.currency}) no hay acceso a grabaciones, por eso recomendamos participar en vivo para aprovechar al máximo la interacción.`,
+    },
+    ...staticFaqs.slice(1),
+  ];
+
   return (
     <SectionWrapper id="faq" className="relative px-4 bg-[#050308]">
       <div
