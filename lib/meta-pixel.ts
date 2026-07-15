@@ -44,11 +44,12 @@ export function trackCustomEvent(
 // ── Pre-built helpers for common events ──
 
 /** User clicked a CTA button that leads to checkout */
-export function trackInitiateCheckout() {
+export function trackInitiateCheckout(value?: number, currency: string = "COP") {
   trackEvent("InitiateCheckout", {
     content_name: "Hipnomente - Producto",
     content_category: "Digital",
-    currency: "COP",
+    currency,
+    ...(value !== undefined ? { value } : {}),
   });
 }
 
@@ -67,10 +68,11 @@ export function trackViewContent(sectionName: string) {
 }
 
 /** User scrolled to the pricing section */
-export function trackLead() {
+export function trackLead(value?: number, currency: string = "COP") {
   trackEvent("Lead", {
     content_name: "Vio sección de precios",
     content_category: "Digital",
-    currency: "COP",
+    currency,
+    ...(value !== undefined ? { value } : {}),
   });
 }

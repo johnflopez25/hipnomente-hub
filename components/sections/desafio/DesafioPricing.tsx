@@ -29,6 +29,7 @@ interface Plan {
   name: string;
   price: string;
   currency: string;
+  value: number;
   description: string;
   includes: string[];
   cta: string;
@@ -116,6 +117,8 @@ function PlanCard({
           href={plan.link}
           target="_blank"
           rel="noopener noreferrer"
+          trackValue={plan.value}
+          trackCurrency={plan.currency}
           className="font-bold uppercase tracking-wide"
         >
           {plan.cta}
@@ -136,6 +139,7 @@ export default function DesafioPricing() {
     name: "En Vivo",
     price: market.priceBasico,
     currency: market.currency,
+    value: market.priceBasicoValue,
     description: "Acceso completo a las 7 sesiones en vivo",
     includes: INCLUDES_BASICO,
     cta: "Quiero el acceso en vivo",
@@ -147,6 +151,7 @@ export default function DesafioPricing() {
     name: "VIP con Grabación",
     price: market.priceVip,
     currency: market.currency,
+    value: market.priceVipValue,
     description: "Todo el desafío + grabaciones por 30 días",
     includes: INCLUDES_VIP,
     cta: "Quiero el plan VIP",

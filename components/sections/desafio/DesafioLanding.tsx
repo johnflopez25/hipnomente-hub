@@ -13,6 +13,7 @@ import DesafioPricing from "./DesafioPricing";
 import DesafioFAQ from "./DesafioFAQ";
 import DesafioFinalCTA from "./DesafioFinalCTA";
 import { MarketProvider } from "./MarketContext";
+import DesafioPixelTracker from "./DesafioPixelTracker";
 import type { MarketCode } from "./markets";
 
 // Shared body for every country variant of the "Hipnotizar en 7 Días" landing.
@@ -22,6 +23,7 @@ import type { MarketCode } from "./markets";
 export default function DesafioLanding({ market }: { market: MarketCode }) {
   return (
     <MarketProvider market={market}>
+      <DesafioPixelTracker />
       <main className="min-h-screen overflow-x-hidden">
         <DesafioHero />
         <DesafioPorQue />

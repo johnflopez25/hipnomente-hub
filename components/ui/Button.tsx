@@ -12,6 +12,8 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string;
   target?: string;
   rel?: string;
+  trackValue?: number;
+  trackCurrency?: string;
 }
 
 const variantStyles: Record<string, string> = {
@@ -43,6 +45,8 @@ export default function Button({
   href,
   target,
   rel,
+  trackValue,
+  trackCurrency,
   ...props
 }: ButtonProps) {
   const base =
@@ -57,7 +61,7 @@ export default function Button({
 
     const handleClick = () => {
       if (isHotmart) {
-        trackInitiateCheckout();
+        trackInitiateCheckout(trackValue, trackCurrency);
       }
     };
 
