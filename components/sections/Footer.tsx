@@ -35,19 +35,19 @@ const navLinks = [
 const socials = [
   {
     Icon: InstagramIcon,
-    href: "https://instagram.com/hipnomente",
+    href: "https://www.instagram.com/drjuanroberto/",
     label: "Instagram",
     color: "hover:text-pink-400",
   },
   {
     Icon: FacebookIcon,
-    href: "https://facebook.com/hipnomente",
+    href: "https://www.facebook.com/juan.roberto.rodriguez.gonzalez.2025?locale=es_LA",
     label: "Facebook",
     color: "hover:text-blue-400",
   },
   {
     Icon: YoutubeIcon,
-    href: "https://youtube.com/@hipnomente",
+    href: "https://www.youtube.com/@hipnomente1",
     label: "YouTube",
     color: "hover:text-red-400",
   },
