@@ -48,7 +48,7 @@ export default function DesafioPorQue() {
           >
             <div>
               <p className="text-[#8fe6da] font-semibold text-sm uppercase tracking-widest mb-4">
-                Esto es para ti si estás listo
+                Esto es para ti si ya haces terapia
               </p>
               <h2
                 className="text-3xl md:text-4xl lg:text-5xl font-extrabold text-white leading-tight mb-6"
@@ -62,33 +62,36 @@ export default function DesafioPorQue() {
 
             <div className="space-y-5 text-slate-300/75 leading-relaxed text-sm md:text-base">
               <p>
-                Siempre nos dicen:{" "}
-                <strong className="text-white">"QUIERO APRENDER A HIPNOTIZAR"</strong>{" "}
-                y de ahí no pasan los curiosos. Siempre vivirán con las ganas de saber
-                cómo se logra hipnotizar de forma efectiva y profunda.
+                Todos los días llegan terapeutas diciendo:{" "}
+                <strong className="text-white">"QUIERO INCORPORAR HIPNOSIS A MIS SESIONES"</strong>{" "}
+                — y ahí se quedan, en la intención. Siguen atendiendo con las mismas
+                herramientas de siempre, mientras otros colegas ya ofrecen resultados
+                que ellos no pueden igualar.
               </p>
               <p>
-                No necesitas suerte para abrir las puertas de la hipnosis. Ni siquiera
-                depende del talento — solo de aplicar el{" "}
-                <strong className="text-white">paso a paso</strong> que vamos a
-                enseñarte en este desafío de 7 días.
+                No necesitas años de formación adicional ni un don especial. Solo el{" "}
+                <strong className="text-white">método correcto</strong> — el mismo que
+                te vamos a enseñar paso a paso en este desafío de 7 días — para empezar
+                a aplicar hipnosis en tus sesiones con seguridad.
               </p>
               <p>
-                Tampoco tienes que pagar un curso que no enseña a hipnotizar ni perder
-                tiempo con tutoriales gratuitos que no llevan a ningún lado.
+                Tampoco tienes que pagar un curso genérico que no conecta la hipnosis
+                con tu práctica real, ni perder tiempo con tutoriales gratuitos que no
+                llevan a ningún lado.
               </p>
 
               {/* Divider */}
               <div className="border-t border-white/10 pt-5">
                 <p>
                   El Desafío <strong className="text-white">"Aprende a Hipnotizar en 7 Días"</strong>{" "}
-                  es un entrenamiento intensivo diseñado para que aprendas a hipnotizar
-                  desde cero, mediante ejercicios prácticos diarios.
+                  es un entrenamiento intensivo diseñado para que incorpores la hipnosis
+                  a tu práctica terapéutica desde cero, mediante ejercicios prácticos
+                  diarios — sin importar cuánta experiencia tengas hipnotizando.
                 </p>
                 <p className="mt-4">
-                  En solo 7 días desarrollarás las bases sólidas de la hipnosis y, si lo
-                  deseas, podrás continuar avanzando hacia niveles más profundos y
-                  profesionales.
+                  En solo 7 días vas a tener las bases sólidas para aplicar hipnosis con
+                  pacientes reales y, si lo deseas, podrás seguir avanzando hacia un
+                  nivel más profundo y profesional en tu práctica.
                 </p>
               </div>
             </div>

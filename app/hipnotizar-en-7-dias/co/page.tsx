@@ -5,13 +5,17 @@ import DesafioLanding from "@/components/sections/desafio/DesafioLanding";
 // /hipnotizar-en-7-dias, only the displayed price/currency changes (see markets.ts).
 // noindex: this is an ad-landing duplicate, not meant to compete in organic search.
 export const metadata: Metadata = {
-  title: "Desafío: Aprende a Hipnotizar en 7 Días | Hipnomente",
+  title: "Desafío: Hipnosis para Terapeutas en 7 Días | Hipnomente",
   description:
-    "Entrenamiento intensivo online. Aprende a hipnotizar desde cero en 7 días con sesiones diarias en vivo por Zoom. Guiado por Juan Roberto Rodríguez, psicólogo e hipnoterapeuta con más de 20 años de experiencia.",
+    "Entrenamiento en vivo de 7 días para terapeutas que quieren incorporar hipnosis a sus sesiones. Con Juan Roberto Rodríguez, psicólogo e hipnoterapeuta.",
+  alternates: {
+    canonical: "https://hipnomente.com/hipnotizar-en-7-dias/co",
+  },
   openGraph: {
-    title: "Desafío: Aprende a Hipnotizar en 7 Días",
+    title: "Desafío: Hipnosis para Terapeutas en 7 Días",
     description:
-      "7 días de práctica guiada para aprender a hipnotizar desde cero. Online, en vivo, 27 de julio de 2026.",
+      "Incorpora la hipnosis a tu práctica terapéutica en 7 días de entrenamiento en vivo por Zoom. Método exclusivo, resultados reales con tus pacientes.",
+    url: "https://hipnomente.com/hipnotizar-en-7-dias/co",
     type: "website",
   },
   robots: { index: false, follow: false },
