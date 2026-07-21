@@ -3,7 +3,7 @@
 import { motion } from "framer-motion";
 import { ArrowRight, Calendar, CheckCircle2 } from "lucide-react";
 import CountdownTimer from "@/components/ui/CountdownTimer";
-import DepthRings from "./DepthRings";
+import AuroraBackground from "./AuroraBackground";
 
 export const LINK_BASICO = "https://pay.hotmart.com/F106570275V";
 export const LINK_VIP = "https://pay.hotmart.com/O106570435F";
@@ -22,16 +22,10 @@ const benefits = [
 export default function DesafioHero() {
   return (
     <section className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden px-4 pt-12 pb-20">
-      {/* Background — violet glow at top, teal ember at bottom, matching the brand gradient */}
+      {/* Background — aurora drift in the brand's violet -> teal gradient */}
       <div aria-hidden="true" className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-b from-[#0d0818] via-[#0a0a14] to-[#080e15]" />
-        <div className="absolute top-0 left-1/2 -translate-x-1/2 w-full h-[60%] bg-[radial-gradient(ellipse_at_top,rgba(91,63,224,0.4)_0%,transparent_65%)]" />
-        <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-[800px] h-[300px] bg-[radial-gradient(ellipse_at_bottom,rgba(34,196,176,0.12)_0%,transparent_70%)]" />
-        <DepthRings
-          size={760}
-          opacity={0.1}
-          className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        />
+        <AuroraBackground />
       </div>
 
       {/* Content */}
