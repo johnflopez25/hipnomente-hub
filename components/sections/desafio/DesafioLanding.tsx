@@ -27,11 +27,11 @@ export default function DesafioLanding({ market }: { market: MarketCode }) {
       <main className="min-h-screen overflow-x-hidden">
         <DesafioHero />
         <DesafioPorQue />
+        <Instructor />
         <DesafioAprenderas />
         <DesafioRevolucion />
         <DesafioObstaculos />
         <DesafioTestimonios />
-        <Instructor />
         <DesafioPricing />
         <DesafioFAQ />
         <DesafioFinalCTA />

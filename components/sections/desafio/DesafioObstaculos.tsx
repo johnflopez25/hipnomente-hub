@@ -3,7 +3,6 @@
 import { motion } from "framer-motion";
 import { Clock, GraduationCap, HelpCircle, Wifi, Stethoscope } from "lucide-react";
 import SectionWrapper from "@/components/ui/SectionWrapper";
-import { useMarket } from "./MarketContext";
 
 const staticObstacles = [
   {
@@ -33,13 +32,12 @@ const staticObstacles = [
 ];
 
 export default function DesafioObstaculos() {
-  const market = useMarket();
-
   const obstacles = [
     {
       icon: Clock,
       question: '"No tengo tiempo."',
-      answer: `Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación (${market.priceVip} ${market.currency}), tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.`,
+      answer:
+        "Cada sesión dura entre 60 y 75 minutos. Si eliges el plan VIP con Grabación, tienes 30 días para repasar cada sesión cuando quieras. Las tareas prácticas son de 10–20 min.",
     },
     ...staticObstacles,
   ];
