@@ -176,6 +176,20 @@ h1, h2, h3 {
   }
 }
 
+/* Carriles horizontales (plataforma de la mentoría). La regla global de abajo
+   solo define `width`, que no aplica a barras horizontales — sin esto los
+   carriles muestran la barra gruesa por defecto del sistema. */
+.scrollbar-thin::-webkit-scrollbar {
+  height: 6px;
+}
+.scrollbar-thin::-webkit-scrollbar-track {
+  background: transparent;
+}
+.scrollbar-thin::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.14);
+  border-radius: 3px;
+}
+
 ::-webkit-scrollbar {
   width: 6px;
 }

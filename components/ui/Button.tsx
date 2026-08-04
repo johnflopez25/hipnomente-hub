@@ -57,10 +57,14 @@ export default function Button({
   } ${className}`;
 
   if (href) {
-    const isHotmart = href.includes("hotmart.com");
+    // Un botón cuenta como checkout si apunta a Hotmart o si quien lo usa pasó
+    // explícitamente un trackValue. Antes solo se miraba el dominio, así que las
+    // landings con otra pasarela (o con el link de pago todavía por definir) no
+    // reportaban InitiateCheckout a Meta.
+    const isCheckout = href.includes("hotmart.com") || trackValue !== undefined;
 
     const handleClick = () => {
-      if (isHotmart) {
+      if (isCheckout) {
         trackInitiateCheckout(trackValue, trackCurrency);
       }
     };
