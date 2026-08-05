@@ -20,10 +20,10 @@ export const LINK_MENTORIA: string | null =
 /** Destino real de todos los CTA de compra de la página. */
 export const CHECKOUT_LINK: string = LINK_MENTORIA ?? WA_LINK;
 
-// Fecha y hora en que termina el precio de lanzamiento: 4 de agosto de 2026 a las
-// 9:00 p.m. hora Colombia (UTC-5). Cambia solo esta línea para mover el contador
+// Fecha y hora en que termina el precio de lanzamiento: 6 de agosto de 2026 a las
+// 7:00 p.m. hora Colombia (UTC-5). Cambia solo esta línea para mover el contador
 // de toda la página. Si la fecha ya pasó, los bloques de urgencia se ocultan solos.
-export const OFFER_DEADLINE = new Date("2026-08-04T21:00:00-05:00");
+export const OFFER_DEADLINE = new Date("2026-08-06T19:00:00-05:00");
 
 export const PRICE = {
   currency: "USD",
